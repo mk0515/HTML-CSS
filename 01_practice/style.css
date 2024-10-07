@@ -153,6 +153,14 @@ footer p {
 }
 
 @media(min-width:640px) {
+    .about img {
+        display: none;
+    }
+
+    .about {
+        background-image: url(./images/bg_main.png) no-repeat center cover;
+    }
+
     .reader {
         margin-right: 60px;
     }
