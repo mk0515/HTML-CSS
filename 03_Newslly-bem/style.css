@@ -135,7 +135,7 @@ img {
     margin-right: auto;
 }
 
-.news__allpost {
+.news__all {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
