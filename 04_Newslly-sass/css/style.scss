@@ -1,0 +1,210 @@
+@charset "utf-8";
+
+$color-bg: #f6f6f6;
+$color-text: #888;
+$color-main: #202124;
+$color__accent: #FA6980;
+$color-time: #bbb;
+
+@mixin inner($w: 80%, $mw: 800px) {
+    width: $w;
+    max-width: $mw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin flex($a: center, $j: space-between) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: $j;
+    align-items: $a;
+}
+
+@mixin title {
+    margin-bottom: 30px;
+    padding-left: 10px;
+    color: $color-main;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: (31/24);
+    border-left: 10px solid $color__accent;
+}
+
+/*  common--------------------*/
+body {
+    color: $color-text;
+    font-size: 14px;
+    font-family: Helvetica, Arial, sans-serif;
+    line-height: (24/14);
+    letter-spacing: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+.header {
+    margin: 30px 0 60px;
+    text-align: center;
+
+    &__inner {
+        @include inner();
+    }
+}
+
+.footer {
+    padding: 100px 0 40px;
+    background-color: $color-main;
+    color: #fff;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__coppy {
+        font-size: 12px;
+    }
+}
+
+.post {
+    &__category {
+        margin-bottom: 10px;
+        color: $color__accent;
+        font-size: 12px;
+        font-style: oblique;
+        line-height: (20/12);
+    }
+
+    &__title {
+        margin-bottom: 15px;
+        color: $color-main;
+        font-size: 18px;
+        font-weight: bold;
+
+        &--border {
+            padding-bottom: 10px;
+            border-bottom: 1px solid $color-time;
+        }
+    }
+}
+
+.time {
+    @include flex(center, left);
+    margin-top: 20px;
+
+    &__num {
+        padding-left: 10px;
+    }
+}
+
+.card {
+    &__content {
+        padding: 35px;
+        background-color: #fff;
+    }
+
+    &__title {
+        color: $color-main;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    &__text {
+        padding-top: 15px;
+    }
+}
+
+.btn {
+    display: block;
+    width: 160px;
+    margin-top: 25px;
+    margin-left: auto;
+    padding: 14px;
+    background-color: $color__accent;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+
+    &--black {
+        margin-bottom: 40px;
+        background-color: $color-main;
+    }
+}
+
+/*index.html--------------------*/
+.more {
+    margin-bottom: 60px;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+        @include title();
+    }
+
+    &__list {
+        @include flex(flex-start);
+        margin-bottom: -60px;
+    }
+
+    &__item {
+        width: (380/800)*100%;
+        margin-bottom: 60px;
+    }
+}
+
+.trending {
+    padding: 60px 0;
+    background-color: $color-bg;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+        @include title();
+    }
+
+    &__list {
+        @include flex();
+    }
+
+    &__item {
+        width: (380/800*100%);
+    }
+}
+
+/*about.html--------------------*/
+.blog {
+    margin-bottom: 60px;
+
+    &__inner {
+        @include inner();
+    }
+}
+
+.discovery {
+    padding: 60px 0;
+    background-color: $color-bg;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+        @include title();
+    }
+
+    &__list {
+        @include flex();
+    }
+
+    &__item {
+        width: (240/800*100%);
+    }
+}
