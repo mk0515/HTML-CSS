@@ -46,6 +46,9 @@ img {
 .menu__item {
   margin-left: 30px;
 }
+.menu__item:hover {
+  color: #ED145B;
+}
 .menu__item--active {
   color: #ED145B;
 }
@@ -114,7 +117,7 @@ img {
 /*index.html--------------------*/
 .about {
   padding: 249px 0 385px;
-  background: url(../images/bg_mainvisual.png) center center/cover;
+  background: url(../images/bg_mainvisual.png) no-repeat center center/cover;
   color: #fff;
 }
 @media screen and (min-width: 900px) {
@@ -153,7 +156,7 @@ img {
 .update__heading {
   margin-bottom: 50px;
   color: #2B2B2B;
-  font-size: 46px;
+  font-size: 38px;
   font-weight: bold;
   text-align: center;
   line-height: 1.2105263158;
@@ -194,23 +197,71 @@ img {
 .service__heading {
   margin-bottom: 50px;
   color: #2B2B2B;
-  font-size: 46px;
+  font-size: 38px;
   font-weight: bold;
   text-align: center;
   line-height: 1.2105263158;
 }
+.service__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.service__item:nth-child(2n+1) h3 {
+  margin-left: auto;
+}
 @media screen and (min-width: 900px) {
-  .service__list {
-    width: 420px;
+  .service__item:nth-child(2n+1) h3 {
+    margin-left: 0;
   }
 }
-.service__item img {
+@media screen and (min-width: 900px) {
+  .service__item {
+    width: 46.6666666667%;
+  }
+}
+.service img {
   width: 100%;
   aspect-ratio: 560/315;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.service__item img h3:nth-child(odd) {
+
+.testimonials {
+  padding: 80px 0;
+  background: url(../images/bg_testimonials.png) no-repeat center center/cover;
+  text-align: center;
+}
+.testimonials__inner {
+  width: 90%;
+  max-width: 900px;
   margin-left: auto;
+  margin-right: auto;
+  padding: 50px;
+  background-color: #fff;
+}
+.testimonials__heading {
+  margin-bottom: 50px;
+  color: #2B2B2B;
+  font-size: 38px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.2105263158;
+}
+.testimonials__pic {
+  margin-bottom: 37px;
+}
+.testimonials__text {
+  margin-bottom: 25px;
+  font-size: 16px;
+  font-style: italic;
+  line-height: 2;
+}
+.testimonials__text span {
+  display: inline-block;
+}
+.testimonials__name {
+  margin-bottom: 40px;
 }
 /*# sourceMappingURL=style.css.map */

@@ -33,7 +33,7 @@ $breakpoints: (
 @mixin m-heading() {
   margin-bottom: 50px;
   color: $color-title;
-  font-size: 46px;
+  font-size: 38px;
   font-weight: bold;
   text-align: center;
   line-height: (46/38
@@ -84,6 +84,10 @@ img {
 
   &__item {
     margin-left: 30px;
+
+    &:hover {
+      color: $color-main;
+    }
 
     &--active {
       color: $color-main;
@@ -151,7 +155,7 @@ img {
 /*index.html--------------------*/
 .about {
   padding: 249px 0 385px;
-  background: url(../images/bg_mainvisual.png) center center/cover;
+  background: url(../images/bg_mainvisual.png) no-repeat center center/cover;
   color: #fff;
 
   @include m-query(desktop) {
@@ -223,20 +227,63 @@ img {
   }
 
   &__list {
-    @include m-query(desktop) {
-      width: 420px;
-    }
+    @include m-flex();
   }
 
   &__item {
-    img {
-      width: 100%;
-      aspect-ratio: 560/315;
-      object-fit: cover;
-
-      h3:nth-child(odd) {
+    &:nth-child(2n+1) {
+      h3 {
         margin-left: auto;
+
+        @include m-query(desktop) {
+          margin-left: 0;
+        }
       }
     }
+
+    @include m-query(desktop) {
+      width: (420/900*100%);
+    }
+  }
+
+  img {
+    width: 100%;
+    aspect-ratio: 560/315;
+    object-fit: cover;
+  }
+}
+
+.testimonials {
+  padding: 80px 0;
+  background: url(../images/bg_testimonials.png) no-repeat center center/cover;
+  text-align: center;
+
+  &__inner {
+    @include m-inner();
+    padding: 50px;
+    background-color: #fff;
+  }
+
+  &__heading {
+    @include m-heading();
+  }
+
+  &__pic {
+    margin-bottom: 37px;
+  }
+
+  &__text {
+    margin-bottom: 25px;
+    font-size: 16px;
+    font-style: italic;
+    line-height: (32/16);
+
+    span {
+      display: inline-block;
+    }
+  }
+
+  &__name {
+    margin-bottom: 40px;
   }
 }
